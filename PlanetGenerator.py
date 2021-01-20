@@ -63,6 +63,8 @@ elif tempNum < 12:
 else:
     Tempurature = 5
 
+print("Tempurature: " + str(Tempurature))
+
 #population
 Population = (d6() + d6()) - 2
 print("Population: 10^" + str(Population))
@@ -112,7 +114,7 @@ else:
     Starport = 0
 print("Starport: " + str(Starport))
 
-#TODO Bases
+# Bases
 navalNum = d6()+d6()
 scoutNum = d6()+d6()
 researchNum = d6()+d6()
