@@ -9,10 +9,17 @@ im = Image.open("subsectortemplate.png")
 draw = ImageDraw.Draw(im)
 
 rad = 50
-draw.ellipse([245-rad, 225-rad, 245+rad, 225+rad], 'black') #0101
-draw.ellipse([245-rad, 225+(10*260)-rad, 245+rad, 225+(10*260)+rad], 'black') #0102
-draw.ellipse([470-rad, 354-rad, 470+rad, 354+rad], 'black') #0201
-draw.ellipse([470-rad, 354+(1*260)-rad, 470+rad, 354+(1*260)+rad], 'black') #0202
+density  = 50 #percentage decity as an integer
+
+for i in range(0,8):
+    if i % 2 == 0:
+        for j in range(0,11):
+            if r.randint(0,100) < density:
+                draw.ellipse([245-rad+(225*i), 225-rad+(j*260), 245+rad+(225*i), 225+rad+(j*260)], 'black')
+    elif i % 2 == 1:
+        for j in range(0,10):
+            if r.randint(0,100) < density:
+                draw.ellipse([245-rad+(225*i), 354-rad+(j*260), 245+rad+(225*i), 354+rad+(j*260)], 'black')
 
 # collum 1 start x,y: 245,97
 # 0101 midpoint x,y: 245, 225
@@ -24,12 +31,9 @@ draw.ellipse([470-rad, 354+(1*260)-rad, 470+rad, 354+(1*260)+rad], 'black') #020
 
 #hex width = 294 half = 147
 #hex height = 260 half = TODO
-#distance between collum x mids: TODO
-
+#distance between collum x mids: 225
 
 im.show()
-
-
 
 print("Save? (y/n): ")
 doSave = input()
