@@ -9,7 +9,7 @@ im = Image.open("subsectortemplate.png")
 draw = ImageDraw.Draw(im)
 
 rad = 50
-density  = 50 #percentage decity as an integer
+density  = 40 #percentage decity as an integer
 
 for i in range(0,8):
     if i % 2 == 0:
@@ -40,4 +40,4 @@ doSave = input()
 if doSave == 'y':
     print("Name: ")
     name=input()
-    im.save(name+".png", "PNG")
+    im.save("maps/"+name+".png", "PNG")
